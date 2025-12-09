@@ -18,3 +18,4 @@ Step 3: Click "Start Play" or use voice commands to spin the wheel.
 Step 4: Watch the wheel spin and see who gets selected! The leaderboard on the left tracks wins.
 
 
+![Uploading Screenshot 2025-12-09 at 9.58.31 PM.png…]()
