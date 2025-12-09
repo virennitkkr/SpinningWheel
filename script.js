@@ -5,6 +5,10 @@ const spinBtn = document.getElementById('spin-btn');
 const resultDiv = document.getElementById('result');
 const ctx = wheel.getContext('2d');
 
+// Configuration constants
+const MIN_SPINS = 5;  // Minimum number of full rotations
+const MAX_SPINS = 10; // Maximum number of full rotations
+
 // Wheel segments
 const segments = [
     { text: '100 Points', color: '#FF6B6B', textColor: '#fff' },
@@ -84,10 +88,8 @@ function spinWheel() {
     resultDiv.textContent = '';
     resultDiv.classList.remove('show');
 
-    // Random number of spins (between 5 and 10 full rotations)
-    const minSpins = 5;
-    const maxSpins = 10;
-    const spins = Math.random() * (maxSpins - minSpins) + minSpins;
+    // Random number of spins
+    const spins = Math.random() * (MAX_SPINS - MIN_SPINS) + MIN_SPINS;
     const extraDegrees = Math.random() * 360;
     const totalRotation = spins * 360 + extraDegrees;
 
@@ -127,8 +129,10 @@ function showResult() {
     // Normalize rotation to 0-2π
     const normalizedRotation = currentRotation % (2 * Math.PI);
     
-    // The pointer is at the top (0 degrees), but we need to account for rotation direction
-    // and find which segment is at the pointer position
+    // Calculate which segment is at the pointer position
+    // The pointer is at the top (90 degrees or π/2 radians from the right)
+    // We reverse the rotation direction (2π - rotation) because the wheel spins clockwise
+    // but the canvas rotation is measured counter-clockwise
     const pointerAngle = (2 * Math.PI - normalizedRotation + Math.PI / 2) % (2 * Math.PI);
     const segmentIndex = Math.floor(pointerAngle / segmentAngle);
     
@@ -147,6 +151,10 @@ drawWheel();
 // Handle responsive canvas sizing
 function resizeCanvas() {
     const container = document.querySelector('.wheel-container');
+    if (!container) {
+        console.error('Wheel container not found');
+        return;
+    }
     const size = Math.min(container.offsetWidth, container.offsetHeight);
     wheel.width = size;
     wheel.height = size;
