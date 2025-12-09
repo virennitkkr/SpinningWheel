@@ -1,6 +1,8 @@
 🎡 About FLS Wheel
 Fun-Learn-Succeed Spinning Wheel - An interactive team picker game that makes selection fun and fair.
 
+<img width="1161" height="743" alt="Screenshot 2025-12-09 at 9 59 42 PM" src="https://github.com/user-attachments/assets/9cf9969a-2108-4699-a786-14df1ab33dac" />
+
 🎡 What is the Wheel Spinner for?
 Make random selection fun and engaging
 Fair and unbiased team selection
@@ -18,4 +20,4 @@ Step 3: Click "Start Play" or use voice commands to spin the wheel.
 Step 4: Watch the wheel spin and see who gets selected! The leaderboard on the left tracks wins.
 
 
-![Uploading Screenshot 2025-12-09 at 9.58.31 PM.png…]()
+
