@@ -1,2 +1,2 @@
-# SpinningWheel
-Spinning Wheel  Online Game
+# Online-PlayPicker
+Online-PlayPicker

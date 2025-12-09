@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLS Play Picker</title>
+    <!-- Favicon and touch icon (served from public/img/favicon.ico) -->
+    <link rel="icon" href="/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="/img/favicon.ico" />
+    <!-- Meta for better display -->
+    <meta name="theme-color" content="#667eea">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #aaea66 0%, #a2544b 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+
+      #root {
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+        #root {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
