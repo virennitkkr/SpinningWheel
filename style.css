@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wheel-container {
+    position: relative;
+    margin: 0 auto 30px;
+    width: 500px;
+    height: 500px;
+}
+
+#wheel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+.pointer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #ff4444;
+    z-index: 10;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+}
+
+.spin-button {
+    background: linear-gradient(135deg, #ff4444 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.spin-button:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+.spin-button:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.spin-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-height: 40px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.result.show {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .wheel-container {
+        width: 350px;
+        height: 350px;
+    }
+    
+    #wheel {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .pointer {
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 30px solid #ff4444;
+    }
+    
+    .spin-button {
+        padding: 12px 40px;
+        font-size: 1.2rem;
+    }
+    
+    .result {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .wheel-container {
+        width: 280px;
+        height: 280px;
+    }
+    
+    #wheel {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .pointer {
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 25px solid #ff4444;
+    }
+}
